@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: open-shift-ml-online-git
+  name: gigante-sandbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: open-shift-ml-online-git
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: open-shift-ml-online-git
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/gigante/open-shift-ml-online-git@sha256:e0e0b463eb8470f2b999f9631dfdfaa33bde3ca6332fb212570a2bec1e76a6c5
+        name: open-shift-ml-online-git
+        env: {}
+        resources: {}
